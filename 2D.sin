@@ -1,0 +1,62 @@
+/*CIT237518
+ *Somaly Ngov
+ *Date: 23/05/2020
+ *Software: Microsoft Visual Studio 2019 Community Edition 
+ *Platform: Microsoft Windows 10 Professional 64­bit
+ *Purpose: Demonstrate the 2d graphics and display to the screen 
+ */
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace _2d
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            this.Width = 500;
+            this.Height = 500;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+        private void btnDraw_Click(object sender, EventArgs e)
+        {
+            System.Drawing.Graphics graphicsObj;
+            graphicsObj = this.CreateGraphics();
+            Pen myPen = new Pen(System.Drawing.Color.Black, 5);
+            Rectangle myRectangle = new Rectangle(100, 100, 100, 100);
+
+            Pen myPen3 = new Pen(System.Drawing.Color.Black, 5);
+            Rectangle myRectangle3 = new Rectangle(200, 100, 200, 100);
+            
+
+            Pen myPen1 = new Pen(System.Drawing.Color.Black, 5);
+            graphicsObj.DrawLine(myPen, 150, 10, 200, 100);
+
+            Pen myPen2 = new Pen(System.Drawing.Color.Black, 5);
+            graphicsObj.DrawLine(myPen, 150, 10, 100, 100);
+
+            Pen myPen4 = new Pen(System.Drawing.Color.Black, 5);
+            graphicsObj.DrawLine(myPen, 350, 10, 150, 10);
+
+            Pen myPen5 = new Pen(System.Drawing.Color.Black, 5);
+            graphicsObj.DrawLine(myPen, 348, 10, 400, 100);
+
+            graphicsObj.DrawRectangle(myPen, myRectangle);
+            graphicsObj.DrawRectangle(myPen3, myRectangle3);
+        }
+    }
+}
